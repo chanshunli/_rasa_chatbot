@@ -9,18 +9,20 @@ A Chinese task oriented chatbot in  IVR(Interactive Voice Response) domain， Im
 #### python3
 install or update to python 3
 
+#### install sklearn and MITIE
+
+```
+pip install -U scikit-learn sklearn-crfsuite
+pip install git+https://github.com/mit-nlp/MITIE.git
+pip install jieba
+```
+
 #### install rasa_core, this will install rasa nlu too, and now support chinese.
 ```
 pip install rasa_core==0.9.0
 ```
 this command will install rasa nlu too.
 
-#### install sklearn and MITIE
-
-```
-pip install -U scikit-learn sklearn-crfsuite
-pip install git+https://github.com/mit-nlp/MITIE.git
-```
 
 ### dir tree
 ```
@@ -73,6 +75,20 @@ $ curl -X POST localhost:1235/parse -d '{"q":"我的流量还剩多少"}' | pyth
         'item': '流量'
     }
 }
+
+➜  myxunfei curl -X POST localhost:1235/parse -d '{"q":"给小明发一封邮件"}' | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   153    0   121  100    32  17566   4645 --:--:-- --:--:-- --:--:-- 20166
+{
+  "q": "给小明发一封邮件",
+  "intent": "request_management",
+  "entities": {
+    "time": "给小明发",
+    "item": "邮件"
+  }
+}
+➜  myxunfei
 
 ```
 
