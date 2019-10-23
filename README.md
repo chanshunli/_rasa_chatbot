@@ -9,6 +9,12 @@ A Chinese task oriented chatbot in  IVR(Interactive Voice Response) domain， Im
 #### python3
 install or update to python 3
 
+```bash
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+pyenv install 3.6.7
+pip install https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.8.0-py3-none-any.whl
+```
+
 #### install sklearn and MITIE
 
 ```
